@@ -26,9 +26,10 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 px-6 py-6 flex justify-between items-center transition-colors duration-300 ${isHome ? 'bg-transparent text-white' : 'bg-background text-foreground'}`}>
       <div className="flex items-center gap-3">
-        <NavLink to="/" className="font-bold text-lg tracking-wider">YOUR NAME</NavLink>
-        <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-[10px] border border-current">
-          PHOTO
+        <NavLink to="/" className="font-bold text-lg tracking-wider">ARCHIT GUPTA</NavLink>
+        <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-[10px] border border-current overflow-hidden">
+          <img src="/profile.jpg" alt="Profile" className="w-full h-full object-cover fallback-bg" onError={(e) => {e.target.style.display='none'; e.target.nextSibling.style.display='block';}}/>
+          <span className="hidden">PHOTO</span>
         </div>
       </div>
       <div className="hidden md:flex gap-8 text-sm font-medium tracking-wide">

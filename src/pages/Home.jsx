@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { projects } from '../data';
+import { projects, profileInfo } from '../data';
 
 const Home = () => {
   const selectedProjects = projects.slice(0, 4);
@@ -10,8 +10,9 @@ const Home = () => {
       {/* Hero Section */}
       <section className="h-screen w-full bg-gradient-to-br from-heroStart to-heroEnd flex flex-col justify-end p-6 md:p-12 lg:p-20 text-white relative">
         <div className="mb-20">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4">YOUR NAME</h1>
-          <p className="text-xl md:text-2xl font-light opacity-90">Tagline / Field of Work</p>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4">{profileInfo.name}</h1>
+          <p className="text-xl md:text-2xl font-light opacity-90">{profileInfo.title}</p>
+          <p className="text-sm md:text-base font-light text-accent mt-2">{profileInfo.subtitle}</p>
         </div>
         
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-sm opacity-70">
