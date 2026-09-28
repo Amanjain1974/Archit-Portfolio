@@ -16,7 +16,7 @@ const ProjectDetail = () => {
       <div className="mb-12">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-12 uppercase">{project.title}</h1>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-gray-300 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 border-b border-gray-300 pb-8">
           <div>
             <h4 className="text-xs font-bold text-accent mb-1 tracking-widest uppercase">Category</h4>
             <p className="text-gray-600">{project.category}</p>

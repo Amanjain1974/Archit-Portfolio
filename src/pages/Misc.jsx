@@ -18,7 +18,7 @@ const Misc = () => {
         {sections.map((section) => (
           <div key={section.key}>
             <h2 className="text-sm font-bold tracking-widest text-accent uppercase mb-8">{section.title}</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {section.data.map((item, index) => (
                 <div key={index} className="group cursor-default">
                   <div className="aspect-[4/3] bg-gray-300 w-full mb-4 overflow-hidden relative">
