@@ -8,6 +8,10 @@ import About from './pages/About';
 import Misc from './pages/Misc';
 import Contact from './pages/Contact';
 
+// Admin imports
+import AdminLogin from './admin/AdminLogin';
+import AdminDashboard from './admin/AdminDashboard';
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -20,6 +24,11 @@ const Navbar = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
+  // Hide Navbar completely on admin routes
+  if (location.pathname.startsWith('/admin')) {
+    return null;
+  }
+
   const isHome = location.pathname === '/';
 
   // Close menu when route changes
@@ -107,6 +116,7 @@ function App() {
       <Navbar />
       <main className="min-h-screen">
         <Routes>
+          {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/work" element={<Work />} />
           <Route path="/work/:id" element={<ProjectDetail />} />
@@ -114,6 +124,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/misc" element={<Misc />} />
           <Route path="/contact" element={<Contact />} />
+          
+          {/* Admin Routes */}
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
         </Routes>
       </main>
     </Router>
